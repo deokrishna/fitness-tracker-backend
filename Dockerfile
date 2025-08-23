@@ -6,7 +6,8 @@ WORKDIR /app
 
 # Copy Maven/Gradle wrapper and project files
 COPY . .
-
+# Make Maven wrapper executable ✅
+RUN chmod +x mvnw
 # Build the application (if using Maven)
 RUN ./mvnw clean package -DskipTests
 
