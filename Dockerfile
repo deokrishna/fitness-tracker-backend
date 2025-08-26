@@ -4,12 +4,8 @@ FROM eclipse-temurin:17-jdk-alpine
 # Set working directory inside the container
 WORKDIR /app
 
-# Copy Maven/Gradle wrapper and project files
-COPY . .
-# Make Maven wrapper executable ✅
-RUN chmod +x mvnw
-# Build the application (if using Maven)
-RUN ./mvnw clean package -DskipTests
+# Copy the prebuilt JAR (build it locally first!)
+COPY target/fitness-tracker-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the default Spring Boot port
 EXPOSE 8080
