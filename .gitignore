@@ -33,7 +33,6 @@ build/
 .vscode/
 # Build folders
 target/*
-!target/fitness-tracker-0.0.1-SNAPSHOT.jar
 
 # IDE files
 .idea/
