@@ -50,7 +50,7 @@ public class NutritionLogController {
 
         return res;
     }
-    @GetMapping("/me}")
+    @GetMapping("/me")
     public List<NutritionLogResponseDTO> getMyNutritionLogs(@AuthenticationPrincipal UserDetails userDetails) {
         User user = userRepository.findByEmail(userDetails.getUsername())
                 .orElseThrow(() -> new RuntimeException("User not found"));
